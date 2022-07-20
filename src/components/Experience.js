@@ -7,28 +7,58 @@ class Experience extends React.Component {
         <h2>Work Experience</h2>
         <p>
           <label htmlFor="company">Company</label>
-          <input type="text" name="company" id="company" />
+          <input
+            type="text"
+            name="company"
+            id="company"
+            onChange={this.props.handleExperienceChange}
+          />
         </p>
         <p>
           <label htmlFor="position">Position</label>
-          <input type="text" name="position" id="position" />
+          <input
+            type="text"
+            name="position"
+            id="position"
+            onChange={this.props.handleExperienceChange}
+          />
         </p>
         <p>
-          <label htmlFor="">Main tasks</label>
-          <input type="text" name="" id="" />
+          <label htmlFor="tasks">Main tasks</label>
+          <input
+            type="text"
+            name="tasks"
+            id="tasks"
+            onChange={this.props.handleExperienceChange}
+          />
         </p>
         <p>
-          <label htmlFor="">City</label>
-          <input type="text" name="" id="" />
+          <label htmlFor="expCity">City</label>
+          <input
+            type="text"
+            name="expCity"
+            id="expCity"
+            onChange={this.props.handleExperienceChange}
+          />
         </p>
         <div className="date">
           <p>
-            <label htmlFor="">From</label>
-            <input type="date" name="" id="" />
+            <label htmlFor="expFrom">From</label>
+            <input
+              type="date"
+              name="expFrom"
+              id="expFrom"
+              onChange={this.props.handleExperienceChange}
+            />
           </p>
           <p>
-            <label htmlFor="">To</label>
-            <input type="date" name="" id="" />
+            <label htmlFor="expTo">To</label>
+            <input
+              type="date"
+              name="expTo"
+              id="expTo"
+              onChange={this.props.handleExperienceChange}
+            />
           </p>
         </div>
       </section>
