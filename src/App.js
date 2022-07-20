@@ -1,9 +1,44 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
+import ContactInfo from "./components/ContactInfo";
+import Preview from "./components/preview/Preview";
 
 class App extends React.Component {
   constructor() {
     super();
+
+    this.state = {
+      userInfo: {
+        fName: "",
+        lName: "",
+        mail: "",
+        phone: "",
+      },
+      education: {
+        school: "",
+        city: "",
+        degree: "",
+        startDate: "",
+        endDate: "",
+      },
+      work: {
+        company: "",
+        position: "",
+        tasks: "",
+        city: "",
+        startDate: "",
+        endDate: "",
+      },
+      skills: [],
+    };
+    this.handlePersonalChange = this.handlePersonalChange.bind(this);
+  }
+
+  handlePersonalChange(e) {
+    const { name, value } = e.target;
+    const { ...personalData } = this.state.userInfo;
+    personalData[name] = value;
+    this.setState({ userInfo: personalData });
   }
 
   render() {
@@ -14,85 +49,14 @@ class App extends React.Component {
         </header>
         <main>
           <form>
-            <section>
-              <h2>Contact Information</h2>
-              <div className="fullName">
-                <p>
-                  <label for="fName">First Name</label>
-                  <input type="text" name="fName"  id="fName" />
-                </p>
-                <p>
-                  <label for="lName">Last Name</label>
-                  <input type="text" name="lName" id="lName" />
-                </p>
-              </div>
-              <p>
-                <label for="mail">E-Mail</label>
-                <input type="email" name="mail" id="mail" />
-              </p>
-              <p>
-                <label for="phone">Phone number</label>
-                <input type="tel" name="phone" id="phone" />
-              </p>
-            </section>
-
-            <section>
-              <h2>Education</h2>
-              <p>
-                <label for="">School/University</label>
-                <input type="" name="" id="" />
-              </p>
-              <p>
-                <label for="city">City</label>
-                <input type="text" name="city" id="city" />
-              </p>
-              <p>
-                <label for="degree">Degree</label>
-                <input type="text" name="degree" id="degree" />
-              </p>
-              <div className="date">
-                <p>
-                  <label for="">From</label>
-                  <input type="date" name="" id="" />
-                </p>
-                <p>
-                  <label for="">To</label>
-                  <input type="date" name="" id="" />
-                </p>
-              </div>
-            </section>
-
-            <section>
-              <h2>Work Experience</h2>
-              <p>
-                <label for="company">Company</label>
-                <input type="text" name="company" id="company" />
-              </p>
-              <p>
-                <label for="position">Position</label>
-                <input type="text" name="position" id="position" />
-              </p>
-              <p>
-                <label for="">City</label>
-                <input type="text" name="" id="" />
-              </p>
-              <div className="date">
-                <p>
-                  <label for="">From</label>
-                  <input type="date" name="" id="" />
-                </p>
-                <p>
-                  <label for="">To</label>
-                  <input type="date" name="" id="" />
-                </p>
-              </div>
-            </section>
-
-            <section>
-              <h2>Skills</h2>
-              <input type="text" />
-            </section>
+            <ContactInfo handleChange={this.handlePersonalChange} />
           </form>
+          <Preview
+            fName={this.state.userInfo.fName}
+            lName={this.state.userInfo.lName}
+            mail={this.state.userInfo.mail}
+            phone={this.state.userInfo.phone}
+          />
         </main>
       </div>
     );
