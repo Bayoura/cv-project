@@ -3,8 +3,7 @@ import React from "react";
 class Education extends React.Component {
   render() {
     return (
-      <section>
-        <h2>Education</h2>
+      <div className="sectionDiv">
         <p>
           <label htmlFor="facility">School/University</label>
           <input
@@ -52,7 +51,7 @@ class Education extends React.Component {
             />
           </p>
         </div>
-      </section>
+      </div>
     );
   }
 }
