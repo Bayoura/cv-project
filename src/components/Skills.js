@@ -6,8 +6,11 @@ class Skills extends React.Component {
     return (
       <section>
         <h2>Skills</h2>
+        <label htmlFor="skill">Skills</label>
         <input
           type="text"
+          id="skill"
+          name="skill"
           value={this.props.skills.skill}
           onChange={this.props.handleSkillChange}
         />
