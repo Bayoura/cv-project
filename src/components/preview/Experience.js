@@ -4,13 +4,19 @@ class Experience extends React.Component {
   render() {
     return (
       <section>
-        <h2>Work Experience</h2>
-        <div>Company: {this.props.experience.company}</div>
-        <div>Position: {this.props.experience.position}</div>
-        <div>Tasks: {this.props.experience.tasks}</div>
-        <div>City: {this.props.experience.expCity}</div>
-        <div>From: {this.props.experience.expFrom}</div>
-        <div>To: {this.props.experience.expTo}</div>
+        {this.props.experienceList.map((experience) => {
+          return (
+            <div key={experience.id}>
+              <h2>Work Experience</h2>
+              <div>Company: {experience.company}</div>
+              <div>Position: {experience.position}</div>
+              <div>Tasks: {experience.tasks}</div>
+              <div>City: {experience.expCity}</div>
+              <div>From: {experience.expFrom}</div>
+              <div>To: {experience.expTo}</div>
+            </div>
+          );
+        })}
       </section>
     );
   }

@@ -4,12 +4,18 @@ class Education extends React.Component {
   render() {
     return (
       <section>
-        <h2>Education</h2>
-        <div>University: {this.props.education.facility}</div>
-        <div>City: {this.props.education.edCity}</div>
-        <div>Degree: {this.props.education.degree}</div>
-        <div>From: {this.props.education.edFrom}</div>
-        <div>To: {this.props.education.edTo}</div>
+        {this.props.educationList.map((education) => {
+          return (
+            <div key={education.id}>
+              <h2>Education</h2>
+              <div>University: {education.facility}</div>
+              <div>City: {education.edCity}</div>
+              <div>Degree: {education.degree}</div>
+              <div>From: {education.edFrom}</div>
+              <div>To: {education.edTo}</div>
+            </div>
+          );
+        })}
       </section>
     );
   }
