@@ -2,8 +2,8 @@ import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import "./App.css";
 import ContactInfo from "./components/ContactInfo";
-import Education from "./components/Education";
-import Experience from "./components/Experience";
+import EducationList from "./components/EducationList";
+import ExperienceList from "./components/ExperienceList";
 import Skills from "./components/Skills";
 import Preview from "./components/preview/Preview";
 
@@ -18,21 +18,27 @@ class App extends React.Component {
         mail: "",
         phone: "",
       },
-      education: {
-        facility: "",
-        edCity: "",
-        degree: "",
-        edFrom: "",
-        edTo: "",
-      },
-      experience: {
-        company: "",
-        position: "",
-        tasks: "",
-        expCity: "",
-        expFrom: "",
-        expTo: "",
-      },
+      educationList: [
+        {
+          id: uuidv4(),
+          facility: "",
+          edCity: "",
+          degree: "",
+          edFrom: "",
+          edTo: "",
+        },
+      ],
+      experienceList: [
+        {
+          id: uuidv4(),
+          company: "",
+          position: "",
+          tasks: "",
+          expCity: "",
+          expFrom: "",
+          expTo: "",
+        },
+      ],
       skills: {
         skill: "",
         skillList: [],
@@ -42,7 +48,11 @@ class App extends React.Component {
     this.handleEducationChange = this.handleEducationChange.bind(this);
     this.handleExperienceChange = this.handleExperienceChange.bind(this);
     this.handleSkillChange = this.handleSkillChange.bind(this);
+    this.addEducation = this.addEducation.bind(this);
+    this.addExperience = this.addExperience.bind(this);
     this.addSkill = this.addSkill.bind(this);
+    this.removeEducation = this.removeEducation.bind(this);
+    this.removeExperience = this.removeExperience.bind(this);
     this.removeSkill = this.removeSkill.bind(this);
   }
 
@@ -55,16 +65,16 @@ class App extends React.Component {
 
   handleEducationChange(e) {
     const { name, value } = e.target;
-    const { ...educationData } = this.state.education;
-    educationData[name] = value;
-    this.setState({ education: educationData });
+    const [...educationData] = this.state.educationList;
+    // educationData[name] = value;
+    // this.setState({ education: educationData });
   }
 
   handleExperienceChange(e) {
     const { name, value } = e.target;
-    const { ...experienceData } = this.state.experience;
-    experienceData[name] = value;
-    this.setState({ experience: experienceData });
+    const [...experienceData] = this.state.experienceList;
+    // experienceData[name] = value;
+    // this.setState({ experience: experienceData });
   }
 
   handleSkillChange(e) {
@@ -74,6 +84,37 @@ class App extends React.Component {
         skill: e.target.value,
         skillList: list,
       },
+    });
+  }
+
+  addEducation() {
+    const [...prevList] = this.state.educationList;
+    const newList = prevList.concat({
+      id: uuidv4(),
+      facility: "",
+      edCity: "",
+      degree: "",
+      edFrom: "",
+      edTo: "",
+    });
+    this.setState({
+      educationList: newList,
+    });
+  }
+
+  addExperience() {
+    const [...prevList] = this.state.experienceList;
+    const newList = prevList.concat({
+      id: uuidv4(),
+      company: "",
+      position: "",
+      tasks: "",
+      expCity: "",
+      expFrom: "",
+      expTo: "",
+    });
+    this.setState({
+      experienceList: newList,
     });
   }
 
@@ -88,6 +129,22 @@ class App extends React.Component {
         }),
         skill: "",
       },
+    });
+  }
+
+  removeEducation() {
+    const newList = this.state.educationList;
+    newList.pop();
+    this.setState({
+      educationList: newList,
+    });
+  }
+
+  removeExperience() {
+    const newList = this.state.experienceList;
+    newList.pop();
+    this.setState({
+      experienceList: newList,
     });
   }
 
@@ -114,8 +171,18 @@ class App extends React.Component {
         <main>
           <form>
             <ContactInfo handleContactChange={this.handleContactChange} />
-            <Education handleEducationChange={this.handleEducationChange} />
-            <Experience handleExperienceChange={this.handleExperienceChange} />
+            <EducationList
+              educationList={this.state.educationList}
+              handleEducationChange={this.handleEducationChange}
+              addEducation={this.addEducation}
+              removeEducation={this.removeEducation}
+            />
+            <ExperienceList
+              experienceList={this.state.experienceList}
+              handleExperienceChange={this.handleExperienceChange}
+              addExperience={this.addExperience}
+              removeExperience={this.removeExperience}
+            />
             <Skills
               skills={this.state.skills}
               handleSkillChange={this.handleSkillChange}
