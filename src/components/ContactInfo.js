@@ -12,7 +12,7 @@ class ContactInfo extends React.Component {
               type="text"
               name="fName"
               id="fName"
-              onChange={this.props.handleContactChange}
+              onChange={this.props.setContactChange}
             />
           </p>
           <p>
@@ -21,7 +21,7 @@ class ContactInfo extends React.Component {
               type="text"
               name="lName"
               id="lName"
-              onChange={this.props.handleContactChange}
+              onChange={this.props.setContactChange}
             />
           </p>
         </div>
@@ -31,7 +31,7 @@ class ContactInfo extends React.Component {
             type="email"
             name="mail"
             id="mail"
-            onChange={this.props.handleContactChange}
+            onChange={this.props.setContactChange}
           />
         </p>
         <p>
@@ -40,7 +40,7 @@ class ContactInfo extends React.Component {
             type="tel"
             name="phone"
             id="phone"
-            onChange={this.props.handleContactChange}
+            onChange={this.props.setContactChange}
           />
         </p>
       </section>

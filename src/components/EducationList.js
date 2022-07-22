@@ -28,7 +28,7 @@ class EducationList extends React.Component {
             <Education
               key={education.id}
               education={education}
-              handleEducationChange={this.props.handleEducationChange}
+              setEducationChange={this.props.setEducationChange}
               addEducation={this.props.addEducation}
             />
           );

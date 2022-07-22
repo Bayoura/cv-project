@@ -28,7 +28,7 @@ class ExperienceList extends React.Component {
             <Experience
               key={experience.id}
               experience={experience}
-              handleExperienceChange={this.props.handleExperienceChange}
+              setExperienceChange={this.props.setExperienceChange}
               addExperience={this.props.addExperience}
             />
           );

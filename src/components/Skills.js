@@ -12,7 +12,7 @@ class Skills extends React.Component {
           id="skill"
           name="skill"
           value={this.props.skills.skill}
-          onChange={this.props.handleSkillChange}
+          onChange={this.props.setSkillChange}
         />
         <button type="button" onClick={this.props.addSkill}>
           Add

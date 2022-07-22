@@ -1,6 +1,15 @@
 import React from "react";
 
 class Experience extends React.Component {
+  constructor() {
+    super();
+    this.handleExperienceChange = this.handleExperienceChange.bind(this);
+  }
+
+  handleExperienceChange(e) {
+    this.props.setExperienceChange(this.props.experience.id, e.target);
+  }
+
   render() {
     return (
       <div className="sectionDiv">
@@ -10,7 +19,7 @@ class Experience extends React.Component {
             type="text"
             name="company"
             id="company"
-            onChange={this.props.handleExperienceChange}
+            onChange={this.handleExperienceChange}
           />
         </p>
         <p>
@@ -19,7 +28,7 @@ class Experience extends React.Component {
             type="text"
             name="position"
             id="position"
-            onChange={this.props.handleExperienceChange}
+            onChange={this.handleExperienceChange}
           />
         </p>
         <p>
@@ -28,7 +37,7 @@ class Experience extends React.Component {
             type="text"
             name="tasks"
             id="tasks"
-            onChange={this.props.handleExperienceChange}
+            onChange={this.handleExperienceChange}
           />
         </p>
         <p>
@@ -37,7 +46,7 @@ class Experience extends React.Component {
             type="text"
             name="expCity"
             id="expCity"
-            onChange={this.props.handleExperienceChange}
+            onChange={this.handleExperienceChange}
           />
         </p>
         <div className="date">
@@ -47,7 +56,7 @@ class Experience extends React.Component {
               type="date"
               name="expFrom"
               id="expFrom"
-              onChange={this.props.handleExperienceChange}
+              onChange={this.handleExperienceChange}
             />
           </p>
           <p>
@@ -56,7 +65,7 @@ class Experience extends React.Component {
               type="date"
               name="expTo"
               id="expTo"
-              onChange={this.props.handleExperienceChange}
+              onChange={this.handleExperienceChange}
             />
           </p>
         </div>

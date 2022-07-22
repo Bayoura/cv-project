@@ -1,6 +1,15 @@
 import React from "react";
 
 class Education extends React.Component {
+  constructor() {
+    super();
+    this.handleEducationChange = this.handleEducationChange.bind(this);
+  }
+
+  handleEducationChange(e) {
+    this.props.setEducationChange(this.props.eduaction.id, e.target);
+  }
+
   render() {
     return (
       <div className="sectionDiv">
@@ -10,7 +19,7 @@ class Education extends React.Component {
             type="text"
             name="facility"
             id="facility"
-            onChange={this.props.handleEducationChange}
+            onChange={this.handleEducationChange}
           />
         </p>
         <p>
@@ -19,7 +28,7 @@ class Education extends React.Component {
             type="text"
             name="edCity"
             id="edCity"
-            onChange={this.props.handleEducationChange}
+            onChange={this.handleEducationChange}
           />
         </p>
         <p>
@@ -28,7 +37,7 @@ class Education extends React.Component {
             type="text"
             name="degree"
             id="degree"
-            onChange={this.props.handleEducationChange}
+            onChange={this.handleEducationChange}
           />
         </p>
         <div className="date">
@@ -38,7 +47,7 @@ class Education extends React.Component {
               type="date"
               name="edFrom"
               id="edFrom"
-              onChange={this.props.handleEducationChange}
+              onChange={this.handleEducationChange}
             />
           </p>
           <p>
@@ -47,7 +56,7 @@ class Education extends React.Component {
               type="date"
               name="edTo"
               id="edTo"
-              onChange={this.props.handleEducationChange}
+              onChange={this.handleEducationChange}
             />
           </p>
         </div>
