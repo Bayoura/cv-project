@@ -15,10 +15,6 @@ class Preview extends React.Component {
       return notEmpty;
     });
 
-    // for (let property in this.props.cv.experienceList) {
-    //   if (this.props.cv.experienceList[property] !== "") notEmpty = true;
-    // }
-
     let experience;
     if (notEmpty) {
       experience = <Experience experienceList={this.props.cv.experienceList} />;
