@@ -18,7 +18,7 @@ class Experience extends React.Component {
           <input
             type="text"
             name="company"
-            id="company"
+            id={`company-${this.props.index}`}
             onChange={this.handleExperienceChange}
           />
         </p>
@@ -27,7 +27,7 @@ class Experience extends React.Component {
           <input
             type="text"
             name="position"
-            id="position"
+            id={`position-${this.props.index}`}
             onChange={this.handleExperienceChange}
           />
         </p>
@@ -36,7 +36,7 @@ class Experience extends React.Component {
           <input
             type="text"
             name="tasks"
-            id="tasks"
+            id={`tasks-${this.props.index}`}
             onChange={this.handleExperienceChange}
           />
         </p>
@@ -45,7 +45,7 @@ class Experience extends React.Component {
           <input
             type="text"
             name="expCity"
-            id="expCity"
+            id={`expCity-${this.props.index}`}
             onChange={this.handleExperienceChange}
           />
         </p>
@@ -55,7 +55,7 @@ class Experience extends React.Component {
             <input
               type="date"
               name="expFrom"
-              id="expFrom"
+              id={`expFrom-${this.props.index}`}
               onChange={this.handleExperienceChange}
             />
           </p>
@@ -64,7 +64,7 @@ class Experience extends React.Component {
             <input
               type="date"
               name="expTo"
-              id="expTo"
+              id={`expTo-${this.props.index}`}
               onChange={this.handleExperienceChange}
             />
           </p>

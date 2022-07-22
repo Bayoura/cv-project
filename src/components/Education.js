@@ -18,7 +18,7 @@ class Education extends React.Component {
           <input
             type="text"
             name="facility"
-            id="facility"
+            id={`facility-${this.props.index}`}
             onChange={this.handleEducationChange}
           />
         </p>
@@ -27,7 +27,7 @@ class Education extends React.Component {
           <input
             type="text"
             name="edCity"
-            id="edCity"
+            id={`edCity-${this.props.index}`}
             onChange={this.handleEducationChange}
           />
         </p>
@@ -36,7 +36,7 @@ class Education extends React.Component {
           <input
             type="text"
             name="degree"
-            id="degree"
+            id={`degree-${this.props.index}`}
             onChange={this.handleEducationChange}
           />
         </p>
@@ -46,7 +46,7 @@ class Education extends React.Component {
             <input
               type="date"
               name="edFrom"
-              id="edFrom"
+              id={`edFrom-${this.props.index}`}
               onChange={this.handleEducationChange}
             />
           </p>
@@ -55,7 +55,7 @@ class Education extends React.Component {
             <input
               type="date"
               name="edTo"
-              id="edTo"
+              id={`edTo-${this.props.index}`}
               onChange={this.handleEducationChange}
             />
           </p>
