@@ -23,13 +23,13 @@ class ExperienceList extends React.Component {
     return (
       <section>
         <h2>Work Experience</h2>
-        {this.props.experienceList.map((experience) => {
+        {this.props.experienceList.map((experience, index) => {
           return (
             <Experience
               key={experience.id}
+              index={index}
               experience={experience}
               setExperienceChange={this.props.setExperienceChange}
-              addExperience={this.props.addExperience}
             />
           );
         })}

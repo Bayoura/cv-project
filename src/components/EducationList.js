@@ -23,13 +23,13 @@ class EducationList extends React.Component {
     return (
       <section>
         <h2>Education</h2>
-        {this.props.educationList.map((education) => {
+        {this.props.educationList.map((education, index) => {
           return (
             <Education
               key={education.id}
+              index={index}
               education={education}
               setEducationChange={this.props.setEducationChange}
-              addEducation={this.props.addEducation}
             />
           );
         })}
