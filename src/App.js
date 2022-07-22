@@ -44,10 +44,10 @@ class App extends React.Component {
         skillList: [],
       },
     };
-    this.handleContactChange = this.handleContactChange.bind(this);
-    this.handleEducationChange = this.handleEducationChange.bind(this);
-    this.handleExperienceChange = this.handleExperienceChange.bind(this);
-    this.handleSkillChange = this.handleSkillChange.bind(this);
+    this.setContactChange = this.setContactChange.bind(this);
+    this.setEducationChange = this.setEducationChange.bind(this);
+    this.setExperienceChange = this.setExperienceChange.bind(this);
+    this.setSkillChange = this.setSkillChange.bind(this);
     this.addEducation = this.addEducation.bind(this);
     this.addExperience = this.addExperience.bind(this);
     this.addSkill = this.addSkill.bind(this);
@@ -56,28 +56,30 @@ class App extends React.Component {
     this.removeSkill = this.removeSkill.bind(this);
   }
 
-  handleContactChange(e) {
+  setContactChange(e) {
     const { name, value } = e.target;
     const { ...contactData } = this.state.userInfo;
     contactData[name] = value;
     this.setState({ userInfo: contactData });
   }
 
-  handleEducationChange(e) {
-    const { name, value } = e.target;
+  setEducationChange(id, target) {
+    const { name, value } = target;
     const [...educationData] = this.state.educationList;
-    // educationData[name] = value;
-    // this.setState({ education: educationData });
+    const index = educationData.findIndex((item) => item.id === id);
+    educationData[index][name] = value;
+    this.setState({ educationList: educationData });
   }
 
-  handleExperienceChange(e) {
-    const { name, value } = e.target;
+  setExperienceChange(id, target) {
+    const { name, value } = target;
     const [...experienceData] = this.state.experienceList;
-    // experienceData[name] = value;
-    // this.setState({ experience: experienceData });
+    const index = experienceData.findIndex((item) => item.id === id);
+    experienceData[index][name] = value;
+    this.setState({ experienceList: experienceData });
   }
 
-  handleSkillChange(e) {
+  setSkillChange(e) {
     const [...list] = this.state.skills.skillList;
     this.setState({
       skills: {
@@ -170,22 +172,22 @@ class App extends React.Component {
         </header>
         <main>
           <form>
-            <ContactInfo handleContactChange={this.handleContactChange} />
+            <ContactInfo setContactChange={this.setContactChange} />
             <EducationList
               educationList={this.state.educationList}
-              handleEducationChange={this.handleEducationChange}
+              setEducationChange={this.setEducationChange}
               addEducation={this.addEducation}
               removeEducation={this.removeEducation}
             />
             <ExperienceList
               experienceList={this.state.experienceList}
-              handleExperienceChange={this.handleExperienceChange}
+              setExperienceChange={this.setExperienceChange}
               addExperience={this.addExperience}
               removeExperience={this.removeExperience}
             />
             <Skills
               skills={this.state.skills}
-              handleSkillChange={this.handleSkillChange}
+              setSkillChange={this.setSkillChange}
               addSkill={this.addSkill}
               removeSkill={this.removeSkill}
             />
