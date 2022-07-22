@@ -14,7 +14,7 @@ class Experience extends React.Component {
     return (
       <div className="sectionDiv">
         <p>
-          <label htmlFor="company">Company</label>
+          <label htmlFor={`company-${this.props.index}`}>Company</label>
           <input
             type="text"
             name="company"
@@ -23,7 +23,7 @@ class Experience extends React.Component {
           />
         </p>
         <p>
-          <label htmlFor="position">Position</label>
+          <label htmlFor={`position-${this.props.index}`}>Position</label>
           <input
             type="text"
             name="position"
@@ -32,7 +32,7 @@ class Experience extends React.Component {
           />
         </p>
         <p>
-          <label htmlFor="tasks">Main tasks</label>
+          <label htmlFor={`tasks-${this.props.index}`}>Main tasks</label>
           <input
             type="text"
             name="tasks"
@@ -41,7 +41,7 @@ class Experience extends React.Component {
           />
         </p>
         <p>
-          <label htmlFor="expCity">City</label>
+          <label htmlFor={`expCity-${this.props.index}`}>City</label>
           <input
             type="text"
             name="expCity"
@@ -51,7 +51,7 @@ class Experience extends React.Component {
         </p>
         <div className="date">
           <p>
-            <label htmlFor="expFrom">From</label>
+            <label htmlFor={`expFrom-${this.props.index}`}>From</label>
             <input
               type="date"
               name="expFrom"
@@ -60,7 +60,7 @@ class Experience extends React.Component {
             />
           </p>
           <p>
-            <label htmlFor="expTo">To</label>
+            <label htmlFor={`expTo-${this.props.index}`}>To</label>
             <input
               type="date"
               name="expTo"

@@ -7,14 +7,16 @@ class Education extends React.Component {
   }
 
   handleEducationChange(e) {
-    this.props.setEducationChange(this.props.eduaction.id, e.target);
+    this.props.setEducationChange(this.props.education.id, e.target);
   }
 
   render() {
     return (
       <div className="sectionDiv">
         <p>
-          <label htmlFor="facility">School/University</label>
+          <label htmlFor={`facility-${this.props.index}`}>
+            School/University
+          </label>
           <input
             type="text"
             name="facility"
@@ -23,7 +25,7 @@ class Education extends React.Component {
           />
         </p>
         <p>
-          <label htmlFor="edCity">City</label>
+          <label htmlFor={`edCity-${this.props.index}`}>City</label>
           <input
             type="text"
             name="edCity"
@@ -32,7 +34,7 @@ class Education extends React.Component {
           />
         </p>
         <p>
-          <label htmlFor="degree">Degree</label>
+          <label htmlFor={`degree-${this.props.index}`}>Degree</label>
           <input
             type="text"
             name="degree"
@@ -42,7 +44,7 @@ class Education extends React.Component {
         </p>
         <div className="date">
           <p>
-            <label htmlFor="edFrom">From</label>
+            <label htmlFor={`edFrom-${this.props.index}`}>From</label>
             <input
               type="date"
               name="edFrom"
@@ -51,7 +53,7 @@ class Education extends React.Component {
             />
           </p>
           <p>
-            <label htmlFor="edTo">To</label>
+            <label htmlFor={`edTo-${this.props.index}`}>To</label>
             <input
               type="date"
               name="edTo"
