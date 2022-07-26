@@ -1,7 +1,7 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
-import "./App.css";
 import ContactInfo from "./components/ContactInfo";
+import Profile from "./components/Profile";
 import EducationList from "./components/EducationList";
 import ExperienceList from "./components/ExperienceList";
 import Skills from "./components/Skills";
@@ -18,6 +18,7 @@ class App extends React.Component {
         mail: "",
         phone: "",
       },
+      profile: "",
       educationList: [
         {
           id: uuidv4(),
@@ -45,6 +46,7 @@ class App extends React.Component {
       },
     };
     this.setContactChange = this.setContactChange.bind(this);
+    this.setProfileChange = this.setProfileChange.bind(this);
     this.setEducationChange = this.setEducationChange.bind(this);
     this.setExperienceChange = this.setExperienceChange.bind(this);
     this.setSkillChange = this.setSkillChange.bind(this);
@@ -61,6 +63,13 @@ class App extends React.Component {
     const { ...contactData } = this.state.userInfo;
     contactData[name] = value;
     this.setState({ userInfo: contactData });
+  }
+
+  setProfileChange(e) {
+    let value = e.target.value;
+    this.setState({
+      profile: value,
+    });
   }
 
   setEducationChange(id, target) {
@@ -166,13 +175,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="app">
         <header>
           <h1>CV Application</h1>
         </header>
         <main>
           <form>
             <ContactInfo setContactChange={this.setContactChange} />
+            <Profile setProfileChange={this.setProfileChange} />
             <EducationList
               educationList={this.state.educationList}
               setEducationChange={this.setEducationChange}
