@@ -12,8 +12,17 @@ class Education extends React.Component {
 
   render() {
     return (
-      <div className="sectionDiv">
-        <p>
+      <div className="section-div">
+        <p className="label-input-wrap">
+          <label htmlFor={`subject-${this.props.index}`}>Subject</label>
+          <input
+            type="text"
+            name="subject"
+            id={`subject-${this.props.index}`}
+            onChange={this.handleEducationChange}
+          />
+        </p>
+        <p className="label-input-wrap">
           <label htmlFor={`facility-${this.props.index}`}>
             School/University
           </label>
@@ -24,7 +33,7 @@ class Education extends React.Component {
             onChange={this.handleEducationChange}
           />
         </p>
-        <p>
+        <p className="label-input-wrap">
           <label htmlFor={`edCity-${this.props.index}`}>City</label>
           <input
             type="text"
@@ -33,7 +42,7 @@ class Education extends React.Component {
             onChange={this.handleEducationChange}
           />
         </p>
-        <p>
+        <p className="label-input-wrap">
           <label htmlFor={`degree-${this.props.index}`}>Degree</label>
           <input
             type="text"
@@ -42,12 +51,13 @@ class Education extends React.Component {
             onChange={this.handleEducationChange}
           />
         </p>
-        <div className="date">
+        <div className="date label-input-wrap">
           <p>
             <label htmlFor={`edFrom-${this.props.index}`}>From</label>
             <input
-              type="date"
+              type="text"
               name="edFrom"
+              placeholder="2012"
               id={`edFrom-${this.props.index}`}
               onChange={this.handleEducationChange}
             />
@@ -55,8 +65,9 @@ class Education extends React.Component {
           <p>
             <label htmlFor={`edTo-${this.props.index}`}>To</label>
             <input
-              type="date"
+              type="text"
               name="edTo"
+              placeholder="2016"
               id={`edTo-${this.props.index}`}
               onChange={this.handleEducationChange}
             />
