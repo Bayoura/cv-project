@@ -4,15 +4,20 @@ class Education extends React.Component {
   render() {
     return (
       <section>
-        <h2>Education</h2>
+        <h2>
+          <i className="fa-solid fa-graduation-cap"></i>Education
+        </h2>
         {this.props.educationList.map((education) => {
           return (
-            <div key={education.id}>
-              <div>University: {education.facility}</div>
-              <div>City: {education.edCity}</div>
-              <div>Degree: {education.degree}</div>
-              <div>From: {education.edFrom}</div>
-              <div>To: {education.edTo}</div>
+            <div key={education.id} className="education-wrap">
+              <div>{`${education.edFrom} - ${education.edTo}`}</div>
+              <div>
+                <div className="subject">{education.subject}</div>
+                <div>
+                  {education.facility}, <span>{education.edCity}</span>
+                </div>
+                <div>{education.degree}</div>
+              </div>
             </div>
           );
         })}

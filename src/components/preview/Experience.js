@@ -4,7 +4,9 @@ class Experience extends React.Component {
   render() {
     return (
       <section>
-        <h2>Work Experience</h2>
+        <h2>
+          <i className="fa-solid fa-briefcase"></i>Work Experience
+        </h2>
         {this.props.experienceList.map((experience) => {
           return (
             <div key={experience.id}>
