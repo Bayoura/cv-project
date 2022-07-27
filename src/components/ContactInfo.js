@@ -5,8 +5,8 @@ class ContactInfo extends React.Component {
     return (
       <section>
         <h2>Contact Information</h2>
-        <div className="fullName">
-          <p>
+        <div className="full-name">
+          <p className="label-input-wrap">
             <label htmlFor="fName">First Name</label>
             <input
               type="text"
@@ -15,7 +15,7 @@ class ContactInfo extends React.Component {
               onChange={this.props.setContactChange}
             />
           </p>
-          <p>
+          <p className="label-input-wrap">
             <label htmlFor="lName">Last Name</label>
             <input
               type="text"
@@ -24,20 +24,29 @@ class ContactInfo extends React.Component {
               onChange={this.props.setContactChange}
             />
           </p>
+          <p className="label-input-wrap">
+            <label htmlFor="address">Address</label>
+            <input
+              type="text"
+              name="address"
+              id="address"
+              onChange={this.props.setContactChange}
+            />
+          </p>
         </div>
-        <p>
+        <p className="label-input-wrap">
           <label htmlFor="mail">E-Mail</label>
           <input
-            type="email"
+            type="text"
             name="mail"
             id="mail"
             onChange={this.props.setContactChange}
           />
         </p>
-        <p>
+        <p className="label-input-wrap">
           <label htmlFor="phone">Phone number</label>
           <input
-            type="tel"
+            type="text"
             name="phone"
             id="phone"
             onChange={this.props.setContactChange}
