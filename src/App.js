@@ -15,6 +15,7 @@ class App extends React.Component {
       userInfo: {
         fName: "",
         lName: "",
+        address: "",
         mail: "",
         phone: "",
       },
@@ -23,6 +24,7 @@ class App extends React.Component {
         {
           id: uuidv4(),
           facility: "",
+          subject: "",
           edCity: "",
           degree: "",
           edFrom: "",
@@ -182,6 +184,12 @@ class App extends React.Component {
         <main>
           <form>
             <ContactInfo setContactChange={this.setContactChange} />
+            <Skills
+              skills={this.state.skills}
+              setSkillChange={this.setSkillChange}
+              addSkill={this.addSkill}
+              removeSkill={this.removeSkill}
+            />
             <Profile setProfileChange={this.setProfileChange} />
             <EducationList
               educationList={this.state.educationList}
@@ -194,12 +202,6 @@ class App extends React.Component {
               setExperienceChange={this.setExperienceChange}
               addExperience={this.addExperience}
               removeExperience={this.removeExperience}
-            />
-            <Skills
-              skills={this.state.skills}
-              setSkillChange={this.setSkillChange}
-              addSkill={this.addSkill}
-              removeSkill={this.removeSkill}
             />
           </form>
           <Preview cv={this.state} />
