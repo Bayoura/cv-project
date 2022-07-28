@@ -21,7 +21,6 @@ main {
   margin: 50px;
   overflow-wrap: break-word; 
   word-wrap: break-word;
-  word-break: break-word;
    /* Adds a hyphen where the word breaks, if supported (No Blink) */
   -ms-hyphens: auto;
   -moz-hyphens: auto;
@@ -62,7 +61,8 @@ form {
 }
 
 input {
-  max-width: 100%;
+  max-width: 200px;
+  width: 100%;
 }
 
 textarea {
@@ -71,17 +71,29 @@ textarea {
   width: 100%;
 }
 
+button {
+  background-color: hsl(183.2, 19%, 39.2%);
+  border: 1px solid hsl(183.2, 19%, 39.2%);
+  border-radius: 3px;
+  color: whitesmoke;
+  padding: 1px 5px;
+}
+
 /* all but last child */
-.bla > h2:first-child {
+.education-input-section > h2:first-child {
   background-color: red;
   /* margin-bottom: 10px;
   padding-bottom: 10px;
-  border-bottom: 1px solid grey; */
+  border-bottom: 1px solid grey; */ 
 }
 
 /* ------------------------PREVIEW------------------------- */
 
 /* height and width are A4 measurements */
+.border-wrap {
+  box-shadow: 3px 3px 6px grey;
+}
+
 .print-container {
   display: flex;
   width: 210mm;
@@ -89,37 +101,47 @@ textarea {
 }
 
 .print-container h1 {
+  color: hsl(183.2, 19%, 39.2%);
   font-size: 2rem;
   text-transform: uppercase;
+  margin-bottom: 15px;
 }
 
 .print-container h2 {
+  font-size: 1.3rem;
   text-transform: uppercase;
 }
 
+.sidebar h2 {
+  border-bottom: 1px solid hsl(0, 0%, 96.9%);
+}
+
+.main-content h2 {
+  border-bottom: 1px solid hsl(183.2, 19%, 39.2%);
+  color: hsl(183.2, 19%, 39.2%);
+}
+
 .main-content {
-  background-color: lightblue;
   padding: 0 40px;
   width: 100%;
 }
 
 .sidebar {
-  background-color: lavender;
+  background-color: hsl(183.2, 19%, 39.2%);
+  color: hsl(0, 0%, 96.9%);
   padding: 0 15px;
-  width: 40%;
-}
-
-.sidebar > section:first-child > div {
-  font-size: 0.9rem;
-  margin-bottom: 10px;
+  max-width: 250px;
+  width: 100%;
 }
 
 i {
   width: 30px;
 }
 
-/* margin is the same as icon width */
+/* margin-left is the same as icon width */
 .user-data {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
   margin-left: 30px;
 }
 
@@ -127,18 +149,12 @@ i {
   margin-left: 25px;
 }
 
-.print-container h2 {
-  border-bottom: 1px solid black;
-  font-size: 1.3rem;
-}
-
-/*--------------------- EDUCATION --------------------- */
-
-.education-wrap {
+.education-wrap, .experience-wrap {
   display: flex;
   gap: 20px;
+  margin-bottom: 10px;
 }
 
-.subject {
+.subject, .position {
   font-weight: bold;
 }
