@@ -5,8 +5,9 @@ class Skills extends React.Component {
   render() {
     return (
       <section>
-        <h2>Skills</h2>
-        <label htmlFor="skill">Skills</label>
+        <label htmlFor="skill">
+          <h2>Skills</h2>
+        </label>
         <input
           type="text"
           id="skill"
