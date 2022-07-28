@@ -14,7 +14,12 @@ class Skill extends React.Component {
     return (
       <li>
         <span>{this.props.skill.title}</span>
-        <button type="button" onClick={this.handleRemoval}>
+        <button
+          className="remove-btn"
+          title="Remove skill"
+          type="button"
+          onClick={this.handleRemoval}
+        >
           Remove
         </button>
       </li>

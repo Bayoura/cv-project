@@ -9,6 +9,7 @@ class ExperienceList extends React.Component {
     if (check) {
       button = (
         <button
+          className="remove-btn"
           title="Remove the last section"
           type="button"
           onClick={this.props.removeExperience}
@@ -33,14 +34,16 @@ class ExperienceList extends React.Component {
             />
           );
         })}
-        <button
-          title="Add another experience section"
-          type="button"
-          onClick={this.props.addExperience}
-        >
-          +
-        </button>
-        {button}
+        <div className="button-wrap">
+          <button
+            title="Add another experience section"
+            type="button"
+            onClick={this.props.addExperience}
+          >
+            +
+          </button>
+          {button}
+        </div>
       </section>
     );
   }

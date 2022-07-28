@@ -1,6 +1,5 @@
 import React from "react";
 import Education from "./Education";
-import "./Components.css";
 
 class EducationList extends React.Component {
   render() {
@@ -10,6 +9,7 @@ class EducationList extends React.Component {
     if (check) {
       button = (
         <button
+          className="remove-btn"
           title="Remove the last section"
           type="button"
           onClick={this.props.removeEducation}
@@ -21,7 +21,7 @@ class EducationList extends React.Component {
       button = <></>;
     }
     return (
-      <section>
+      <section className="education-input-section">
         <h2>Education</h2>
         {this.props.educationList.map((education, index) => {
           return (
@@ -33,14 +33,16 @@ class EducationList extends React.Component {
             />
           );
         })}
-        <button
-          title="Add another education section"
-          type="button"
-          onClick={this.props.addEducation}
-        >
-          +
-        </button>
-        {button}
+        <div className="button-wrap">
+          <button
+            title="Add another education section"
+            type="button"
+            onClick={this.props.addEducation}
+          >
+            +
+          </button>
+          {button}
+        </div>
       </section>
     );
   }
