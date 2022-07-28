@@ -10,8 +10,7 @@ class ContactInfo extends React.Component {
             <i className="fa-solid fa-user"></i>Name
           </h3>
           <div className="user-data">
-            <span>{this.props.userInfo.fName} </span>
-            <span>{this.props.userInfo.lName}</span>
+            {this.props.userInfo.fName} {this.props.userInfo.lName}
           </div>
         </div>
         <div>
