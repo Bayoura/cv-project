@@ -9,13 +9,17 @@ class Experience extends React.Component {
         </h2>
         {this.props.experienceList.map((experience) => {
           return (
-            <div key={experience.id}>
-              <div>Company: {experience.company}</div>
-              <div>Position: {experience.position}</div>
-              <div>Tasks: {experience.tasks}</div>
-              <div>City: {experience.expCity}</div>
-              <div>From: {experience.expFrom}</div>
-              <div>To: {experience.expTo}</div>
+            <div key={experience.id} className="experience-wrap">
+              <div>
+                {experience.expFrom} - {experience.expTo}
+              </div>
+              <div>
+                <div className="position">{experience.position}</div>
+                <div>
+                  {experience.company}, {experience.expCity}
+                </div>
+                <div>{experience.tasks}</div>
+              </div>
             </div>
           );
         })}

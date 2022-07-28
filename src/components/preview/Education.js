@@ -10,11 +10,13 @@ class Education extends React.Component {
         {this.props.educationList.map((education) => {
           return (
             <div key={education.id} className="education-wrap">
-              <div>{`${education.edFrom} - ${education.edTo}`}</div>
+              <div>
+                {education.edFrom} - {education.edTo}
+              </div>
               <div>
                 <div className="subject">{education.subject}</div>
                 <div>
-                  {education.facility}, <span>{education.edCity}</span>
+                  {education.facility}, {education.edCity}
                 </div>
                 <div>{education.degree}</div>
               </div>
