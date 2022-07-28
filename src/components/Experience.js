@@ -12,17 +12,8 @@ class Experience extends React.Component {
 
   render() {
     return (
-      <div className="sectionDiv">
-        <p>
-          <label htmlFor={`company-${this.props.index}`}>Company</label>
-          <input
-            type="text"
-            name="company"
-            id={`company-${this.props.index}`}
-            onChange={this.handleExperienceChange}
-          />
-        </p>
-        <p>
+      <div className="section-div">
+        <p className="label-input-wrap">
           <label htmlFor={`position-${this.props.index}`}>Position</label>
           <input
             type="text"
@@ -31,16 +22,16 @@ class Experience extends React.Component {
             onChange={this.handleExperienceChange}
           />
         </p>
-        <p>
-          <label htmlFor={`tasks-${this.props.index}`}>Main tasks</label>
+        <p className="label-input-wrap">
+          <label htmlFor={`company-${this.props.index}`}>Company</label>
           <input
             type="text"
-            name="tasks"
-            id={`tasks-${this.props.index}`}
+            name="company"
+            id={`company-${this.props.index}`}
             onChange={this.handleExperienceChange}
           />
         </p>
-        <p>
+        <p className="label-input-wrap">
           <label htmlFor={`expCity-${this.props.index}`}>City</label>
           <input
             type="text"
@@ -49,12 +40,22 @@ class Experience extends React.Component {
             onChange={this.handleExperienceChange}
           />
         </p>
-        <div className="date">
+        <p className="label-input-wrap">
+          <label htmlFor={`tasks-${this.props.index}`}>Main tasks</label>
+          <input
+            type="text"
+            name="tasks"
+            id={`tasks-${this.props.index}`}
+            onChange={this.handleExperienceChange}
+          />
+        </p>
+        <div className="date label-input-wrap">
           <p>
             <label htmlFor={`expFrom-${this.props.index}`}>From</label>
             <input
-              type="date"
+              type="text"
               name="expFrom"
+              placeholder="2012"
               id={`expFrom-${this.props.index}`}
               onChange={this.handleExperienceChange}
             />
@@ -62,8 +63,9 @@ class Experience extends React.Component {
           <p>
             <label htmlFor={`expTo-${this.props.index}`}>To</label>
             <input
-              type="date"
+              type="text"
               name="expTo"
+              placeholder="2012"
               id={`expTo-${this.props.index}`}
               onChange={this.handleExperienceChange}
             />
