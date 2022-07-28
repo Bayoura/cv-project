@@ -31,23 +31,29 @@ class Preview extends React.Component {
     }
 
     return (
-      <div>
-        <div ref={(el) => (this.myRef = el)} className="print-container">
-          <div className="sidebar">
-            <ContactInfo userInfo={this.props.cv.userInfo} />
-            <SkillList skillList={this.props.cv.skills.skillList} />
-          </div>
-          <div className="main-content">
-            <Profile
-              profile={this.props.cv.profile}
-              name={this.props.cv.userInfo}
-            />
-            <Education educationList={this.props.cv.educationList} />
-            {experience}
+      <div className="preview">
+        <div className="border-wrap">
+          <div ref={(el) => (this.myRef = el)} className="print-container">
+            <div className="sidebar">
+              <ContactInfo userInfo={this.props.cv.userInfo} />
+              <SkillList skillList={this.props.cv.skills.skillList} />
+            </div>
+            <div className="main-content">
+              <Profile
+                profile={this.props.cv.profile}
+                name={this.props.cv.userInfo}
+              />
+              <Education educationList={this.props.cv.educationList} />
+              {experience}
+            </div>
           </div>
         </div>
         <ReactToPrint
-          trigger={() => <button>Print this</button>}
+          trigger={() => (
+            <button className="print-btn" type="button">
+              Print/PDF
+            </button>
+          )}
           content={() => this.myRef}
         />
       </div>
