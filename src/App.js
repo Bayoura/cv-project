@@ -179,7 +179,7 @@ class App extends React.Component {
     return (
       <div className="app">
         <header>
-          <h1>CV Application</h1>
+          <h1>CV Creator</h1>
         </header>
         <main>
           <form>
