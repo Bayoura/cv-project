@@ -1,16 +1,14 @@
 import React from "react";
 
-class Profile extends React.Component {
-  render() {
-    return (
-      <section>
-        <h1>
-          {this.props.name.fName} {this.props.name.lName}
-        </h1>
-        <div>{this.props.profile}</div>
-      </section>
-    );
-  }
+function Profile({ profile, userInfo }) {
+  return (
+    <section>
+      <h1>
+        {userInfo.fName} {userInfo.lName}
+      </h1>
+      <div>{profile}</div>
+    </section>
+  );
 }
 
 export default Profile;
