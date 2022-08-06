@@ -1,81 +1,72 @@
 import React from "react";
 
-class Education extends React.Component {
-  constructor() {
-    super();
-    this.handleEducationChange = this.handleEducationChange.bind(this);
+function Education({ index, education, setEducationChange }) {
+  function handleEducationChange(e) {
+    setEducationChange(education.id, e.target);
   }
 
-  handleEducationChange(e) {
-    this.props.setEducationChange(this.props.education.id, e.target);
-  }
-
-  render() {
-    return (
-      <div className="section-div">
-        <p className="label-input-wrap">
-          <label htmlFor={`subject-${this.props.index}`}>Subject</label>
+  return (
+    <div className="section-div">
+      <p className="label-input-wrap">
+        <label htmlFor={`subject-${index}`}>Subject</label>
+        <input
+          type="text"
+          name="subject"
+          id={`subject-${index}`}
+          onChange={handleEducationChange}
+        />
+      </p>
+      <p className="label-input-wrap">
+        <label htmlFor={`facility-${index}`}>School/University</label>
+        <input
+          type="text"
+          name="facility"
+          id={`facility-${index}`}
+          onChange={handleEducationChange}
+        />
+      </p>
+      <p className="label-input-wrap">
+        <label htmlFor={`edCity-${index}`}>City</label>
+        <input
+          type="text"
+          name="edCity"
+          id={`edCity-${index}`}
+          onChange={handleEducationChange}
+        />
+      </p>
+      <p className="label-input-wrap">
+        <label htmlFor={`degree-${index}`}>Degree</label>
+        <input
+          type="text"
+          name="degree"
+          id={`degree-${index}`}
+          onChange={handleEducationChange}
+        />
+      </p>
+      <div className="date label-input-wrap">
+        <p>
+          <label htmlFor={`edFrom-${index}`}>From</label>
           <input
             type="text"
-            name="subject"
-            id={`subject-${this.props.index}`}
-            onChange={this.handleEducationChange}
+            name="edFrom"
+            placeholder="2012"
+            id={`edFrom-${index}`}
+            onChange={handleEducationChange}
           />
         </p>
-        <p className="label-input-wrap">
-          <label htmlFor={`facility-${this.props.index}`}>
-            School/University
-          </label>
+        <p>
+          <label htmlFor={`edTo-${index}`}>To</label>
           <input
             type="text"
-            name="facility"
-            id={`facility-${this.props.index}`}
-            onChange={this.handleEducationChange}
+            name="edTo"
+            placeholder="2016"
+            id={`edTo-${index}`}
+            onChange={handleEducationChange}
           />
         </p>
-        <p className="label-input-wrap">
-          <label htmlFor={`edCity-${this.props.index}`}>City</label>
-          <input
-            type="text"
-            name="edCity"
-            id={`edCity-${this.props.index}`}
-            onChange={this.handleEducationChange}
-          />
-        </p>
-        <p className="label-input-wrap">
-          <label htmlFor={`degree-${this.props.index}`}>Degree</label>
-          <input
-            type="text"
-            name="degree"
-            id={`degree-${this.props.index}`}
-            onChange={this.handleEducationChange}
-          />
-        </p>
-        <div className="date label-input-wrap">
-          <p>
-            <label htmlFor={`edFrom-${this.props.index}`}>From</label>
-            <input
-              type="text"
-              name="edFrom"
-              placeholder="2012"
-              id={`edFrom-${this.props.index}`}
-              onChange={this.handleEducationChange}
-            />
-          </p>
-          <p>
-            <label htmlFor={`edTo-${this.props.index}`}>To</label>
-            <input
-              type="text"
-              name="edTo"
-              placeholder="2016"
-              id={`edTo-${this.props.index}`}
-              onChange={this.handleEducationChange}
-            />
-          </p>
-        </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default Education;
