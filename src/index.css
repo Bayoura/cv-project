@@ -217,6 +217,10 @@ i {
   margin-bottom: 10px;
 }
 
+.education-wrap > div:first-child, .experience-wrap > div:first-child {
+  min-width: 83px;
+}
+
 .subject, .position {
   font-weight: bold;
 }
