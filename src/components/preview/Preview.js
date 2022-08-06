@@ -41,7 +41,7 @@ class Preview extends React.Component {
             <div className="main-content">
               <Profile
                 profile={this.props.cv.profile}
-                name={this.props.cv.userInfo}
+                userInfo={this.props.cv.userInfo}
               />
               <Education educationList={this.props.cv.educationList} />
               {experience}
